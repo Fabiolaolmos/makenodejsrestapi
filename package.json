@@ -1,0 +1,26 @@
+{
+  "name": "makenodejsrestapi",
+  "version": "1.0.0",
+  "description": "Esta es una API Con MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "dev": "babel-node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.17",
+    "@babel/node": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "babel-watch": "^7.8.1",
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2"
+  }
+}
