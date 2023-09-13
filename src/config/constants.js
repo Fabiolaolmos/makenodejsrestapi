@@ -1,6 +1,8 @@
-const devConfig = { MONGO_URL: 'mongodb://localhost/makeanodejsapi-dev', }; 
- const testConfig = { MONGO_URL: 'mongodb://localhost/makeanodejsapi-test', }; 
- const prodConfig = { MONGO_URL: 'mongodb://localhost/makeanodejsapi-prod', };
+const devConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-dev', }; 
+ const testConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-test', }; 
+ const prodConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-prod', };
+
+ 
 const defaultConfig = {
 PORT: process.env.PORT || 3000,
 };
