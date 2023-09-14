@@ -1,10 +1,11 @@
-const devConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-dev', }; 
+const devConfig = { MONGO_URL: 'mongodb://localhost:27017/makenodejsrestapi-dev', }; 
  const testConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-test', }; 
  const prodConfig = { MONGO_URL: 'mongodb://localhost/makenodejsrestapi-prod', };
 
  
 const defaultConfig = {
 PORT: process.env.PORT || 3000,
+
 };
 function envConfig(env) {
      switch (env) {
