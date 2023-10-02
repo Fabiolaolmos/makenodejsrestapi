@@ -14,6 +14,7 @@ app.listen(constants.PORT, err => {
     if (err) {
         throw err;
     } else {
+        // eslint-disable-next-line no-undef
         console.log(` Server running on port: ${constants.PORT} --- Running on ${process.env.NODE_ENV} --- Make something great `);
     }
 });
