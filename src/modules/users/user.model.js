@@ -1,10 +1,6 @@
-import mongoose, {
-    Schema
-} from 'mongoose';
+import mongoose, { Schema} from 'mongoose';
 import validator from 'validator';
-import {
-    passwordReg
-} from './user.validations';
+import {passwordReg} from './user.validations';
 const UserSchema = new Schema({
     email: {
         type: String,
