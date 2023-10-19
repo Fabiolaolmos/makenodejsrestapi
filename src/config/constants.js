@@ -1,4 +1,5 @@
-const devConfig = { MONGO_URL: 'mongodb://localhost:27017/makenodejsrestapi-dev' };
+const devConfig = { MONGO_URL: 'mongodb://localhost:27017/makenodejsrestapi-dev', 
+JWT_SECRET:'thisisasecret'};
 const testConfig = { MONGO_URL: 'mongodb://localhost:27017/makenodejsrestapi-test' };
 const prodConfig = { MONGO_URL: 'mongodb://localhost:27017/makenodejsrestapi-prod' };
 // eslint-disable-next-line no-undef

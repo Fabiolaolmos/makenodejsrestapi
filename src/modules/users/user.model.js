@@ -1,6 +1,8 @@
 import mongoose, { Schema} from 'mongoose';
 import validator from 'validator';
 import {passwordReg} from './user.validations';
+import * as bcrypt from 'bcrypt';
+
 const UserSchema = new Schema({
     email: {
         type: String,
@@ -42,5 +44,24 @@ const UserSchema = new Schema({
             message: '{VALUE} is not a valid password!',
         },
     },
+    
 });
+
+UserSchema.pre('save', function(next) {
+    if (this.isModified('password')) {
+        this.password = this.hashPassword(this.password);
+    }
+    return next();
+});
+
+UserSchema.methods = {
+    hashPassword(password) {
+    return bcrypt.hashSync(password,10);
+    },
+    authenticateUser(password) {
+        
+        return bcrypt.compare(password, this.password);
+    },
+};
+
 export default mongoose.model('User', UserSchema);
