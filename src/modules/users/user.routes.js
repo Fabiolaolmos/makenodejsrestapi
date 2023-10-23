@@ -11,3 +11,5 @@ import   userValidation from './user.validations';
    routes.post('/login', authLocal, userController.login);
    
    export default   routes;
+
+   
