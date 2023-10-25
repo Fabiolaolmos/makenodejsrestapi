@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
  import constants from './constants';
  
+ 
  //Removes the warning with promises 
- mongoose.Promise = global.Promise;
+ // eslint-disable-next-line no-undef
+ mongoose.Promise = global.Promise; //modificar
  
  //Connect the db with the url provided 
  try {
