@@ -3,6 +3,9 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    "globals": {
+        "__rootdir": "readonly"
+    },
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
