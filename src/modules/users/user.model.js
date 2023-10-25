@@ -1,7 +1,9 @@
 import mongoose, { Schema} from 'mongoose';
 import validator from 'validator';
 import {passwordReg} from './user.validations';
-import * as bcrypt from 'bcrypt';
+// import * as bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import constants from '../../config/constants';
 
 const UserSchema = new Schema({
     email: {
@@ -54,14 +56,33 @@ UserSchema.pre('save', function(next) {
     return next();
 });
 
-UserSchema.methods = {
-    hashPassword(password) {
-    return bcrypt.hashSync(password,10);
-    },
-    authenticateUser(password) {
+//UserSchema.methods = {
+   // hashPassword(password) {
+    //return bcrypt.hashSync(password,10);
+    //},
+    //authenticateUser(password) {
         
-        return bcrypt.compare(password, this.password);
-    },
-};
+      //  return bcrypt.compare(password, this.password);
+    //},
+
+    UserSchema.methods   = {
+   
+        createToken() {
+          return jwt.sign(
+            {
+              _id: this._id,
+            },
+            constants.JWT_SECRET,
+          );
+        },
+        toJSON() {
+          return {
+            _id: this._id,
+            userName: this.userName,
+            token: `JWT ${this.createToken()}`,
+          };
+        },
+      };
+
 
 export default mongoose.model('User', UserSchema);
