@@ -5,6 +5,8 @@ import {passwordReg} from './user.validations';
 import jwt from 'jsonwebtoken';
 import constants from '../../config/constants';
 
+
+
 const UserSchema = new Schema({
     email: {
         type: String,
@@ -56,16 +58,7 @@ UserSchema.pre('save', function(next) {
     return next();
 });
 
-//UserSchema.methods = {
-   // hashPassword(password) {
-    //return bcrypt.hashSync(password,10);
-    //},
-    //authenticateUser(password) {
-        
-      //  return bcrypt.compare(password, this.password);
-    //},
-
-    UserSchema.methods   = {
+       UserSchema.methods   = {
    
         createToken() {
           return jwt.sign(
